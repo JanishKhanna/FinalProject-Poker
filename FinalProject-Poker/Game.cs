@@ -8,35 +8,37 @@ namespace FinalProject_Poker
 {
     class Game
     {
-        public MyPlayer MyPlayer { get; set; }
+        public MyPlayer MyPlayer { get; set; } = new MyPlayer(null);
 
         public Game()
         {
-            MyPlayer[] myPlayers = new MyPlayer[5];
-
-            Start();
-            myPlayers[0] = new MyPlayer("Sam");
-            myPlayers[1] = new MyPlayer("Jacky");
-            myPlayers[2] = new MyPlayer("Roi");
-            myPlayers[3] = new MyPlayer("Sid");
             
-
-            foreach (var myPlayer in myPlayers)
-            {
-                Console.WriteLine(myPlayer?.Name);
-            }
         }
 
 
 
         public void Start()
         {
+            MyPlayer[] myPlayers = new MyPlayer[5];
+            
             Console.WriteLine("Welcome");
             Console.WriteLine("Please enter your name:");
 
             MyPlayer.Name = Console.ReadLine();
 
             Console.WriteLine("********** Hello " + MyPlayer.Name + " **********");
+
+            myPlayers[0] = new MyPlayer("Sam");
+            myPlayers[1] = new MyPlayer("Jacky");
+            myPlayers[2] = new MyPlayer("Roi");
+            myPlayers[3] = new MyPlayer("Sid");
+            myPlayers[4] = MyPlayer;
+
+            foreach (var myPlayer in myPlayers)
+            {
+                Console.WriteLine(myPlayer.Name);
+            }
+            
 
             //Main();
         }
